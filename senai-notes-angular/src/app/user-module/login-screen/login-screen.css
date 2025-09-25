@@ -1,0 +1,127 @@
+
+.page-container {
+
+    display: flex;
+    background-color: colors/neutral/100;
+   
+
+
+}
+
+
+.titulo {
+
+    font-size: 24px;
+    font-family: "inter";
+    font-weight: normal;
+    margin-bottom: 16px;
+    font-weight: bold;
+    
+
+
+}
+
+.inpt {
+
+    padding: 10px;
+    width: 377px;
+    margin-bottom: 16px;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    
+
+    
+}
+
+
+
+.btm {
+
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #335CFF;
+    color: #f7f9fb;
+    width: 377px;
+
+    cursor: pointer;
+
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+
+
+}
+
+/* .logo {
+
+    
+
+} */
+
+.subtitulo {
+
+    font-size: 14px;
+    font-family: "inter";
+    font-weight: 100px;
+    margin-bottom: 16px;
+    color: grey;
+    
+
+
+}
+
+.borda-interna {
+
+    
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    height: 55vh;
+    background-color: white;
+    width: 30vw;
+    box-shadow: 1px 8px 8px 8px #ccc;
+
+
+}
+
+.form {
+
+    font-weight: auto;
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+
+    font-size: 14px;
+    color:grey;
+
+}
+
+.forgotPassword {
+
+    font-weight: auto;
+    font-size: 14px;
+    color:grey;
+
+    margin-right: 135px;
+
+}
+
+.email {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 135px;
+    font-size: 14px;
+    margin-top: 50px;
+
+}
