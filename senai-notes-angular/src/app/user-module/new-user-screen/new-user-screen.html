@@ -1,1 +1,36 @@
-<p>new-user-screen works!</p>
+<body>
+
+    <header></header>
+    <main class="page-container"> <!--Caixa maior-->
+
+
+        <div class="login-container" [formGroup]="loginForm">
+
+            <div class="logo">
+                <img src="imgs/pena.png" alt="icone pena">
+                <h3 class="Senai-notes">Senai-notes</h3>
+            </div>
+
+
+            <h1 class="titulo">Create Your Account</h1>
+            <h5 class="subtitulo">Sign up to start organizing your notes and boost your productivity</h5>
+
+            <input class="inpt" type="email" Placeholder="Email Address" formControlName="email">
+            <input class="inpt" type="password" placeholder="Password" formControlName="password">
+
+            <div class="info">
+
+                <img src="imgs/info-circle.png" alt="icone informacao"> 
+                <h6>At least 8 characters</h6>
+            </div>
+
+            <button class="button" (click)="onloginClick()">Sign Up</button>
+
+            <h6>Already have an account? Login</h6>
+
+        </div>
+
+    </main> <!--Caixa maior-->
+
+    <footer></footer>
+</body>
