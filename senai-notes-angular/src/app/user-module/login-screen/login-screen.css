@@ -2,14 +2,13 @@
 .page-container {
 
     display: flex;
-    background-color: colors/neutral/100;
-   
+    background-color: #FFFFFF;   
 
 
 }
 
 
-.titulo {
+.title {
 
     font-size: 24px;
     font-family: "inter";
@@ -80,7 +79,7 @@
 
 .borda-interna {
 
-    
+    padding: 48px;
     border-radius: 15px;
     text-align: center;
     justify-content: center;
@@ -97,15 +96,22 @@
     font-weight: auto;
     display: flex;
     flex-direction: column;
-
     margin-top: 20px;
     margin-bottom: 20px;
-    
-
     font-size: 14px;
     color:grey;
 
 }
+
+.password {
+
+display: flex;
+justify-content: flex-start;
+margin-left: 100px;
+font-family: 100px;
+
+}
+
 
 .forgotPassword {
 
