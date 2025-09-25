@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.titulo {
+
+    font-size: 76px;
+    margin-bottom: 16px;
+    font-weight: 400;
+
+}
+
+
+.page-container {
+
+    display: flex; /* um ao lado do outro */
+
+}
+
+.login-container {
+
+width: 50vw; /*50% do tamanho horizontal do monitor */
+height: 100vh; /* 50% da altura da tela */
+
+/* Kit Sobrevivência da centralização */
+
+display: flex; /*Ativar o flex */
+flex-direction: column; /*Muda o flex para colunas */
+align-items: center; /* Centralizar horizontalmente */
+justify-content: center; /* Centralizar verticalmente */
+
+}
+
+.login-container img {
+
+    height: 60px;
+
+}
+
+.inpt {
+
+    padding: 12px;
+    background-color: #F7F9FB;
+    width: 444px;
+    border: 1px solid #CACFD8;
+    border-radius: 10px;
+    margin-bottom: 16px;
+
+}
+
+.button {
+
+    padding: 12px;
+    font-size: 16px;
+    background-color:#335CFF;
+    color: #FFFFFF;
+    width: 444px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.error-message {
+
+    color: red;
+    font-size: 13px;
+    transform: translateY(-12px) translateX(-90px);
+    
+}
+
+.error-messagepassword {
+
+    color: red;
+    font-size: 13px;
+    transform: translateY(-12px) translateX(-90px);
+
+}
+
+.approvedMessage {
+
+    color: black;
+    font-size: 13px;
+    transform: translateY(-12px) translateX(94px);
+
+}
+
+.link-login {
+
+    cursor: pointer;
+    text-decoration: underline;
+    color: black;
+    padding: 16px;
+}
