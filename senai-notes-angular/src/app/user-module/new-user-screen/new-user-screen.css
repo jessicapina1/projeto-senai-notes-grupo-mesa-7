@@ -1,62 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.pena{
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    
+}
+
+
 .titulo {
-
-    font-size: 76px;
+    font-size: 24px;
     margin-bottom: 16px;
-    font-weight: 400;
+    font-weight: bold;
+}
 
+.subtitulo {
+    font-size: 14px;
+    font-style: normal;
+    margin-bottom: 10px;
 }
 
 
 .page-container {
 
-    display: flex; /* um ao lado do outro */
-
+    display: flex;
+    /* um ao lado do outro */
+     flex-direction: column;
+    /*Muda o flex para colunas */
+    align-items: center;
+    /* Centralizar horizontalmente */
+    justify-content: center;
+    /* Centralizar verticalmente */
+    background-color: #F3F5F8;
+    width: 100%;
+    height: 100vh;
 }
 
 .login-container {
 
-width: 50vw; /*50% do tamanho horizontal do monitor */
-height: 100vh; /* 50% da altura da tela */
-
-/* Kit Sobrevivência da centralização */
-
-display: flex; /*Ativar o flex */
-flex-direction: column; /*Muda o flex para colunas */
-align-items: center; /* Centralizar horizontalmente */
-justify-content: center; /* Centralizar verticalmente */
+    width: 540px;
+    height: 526px;
+    display: flex;
+    /*Ativar o flex */
+    flex-direction: column;
+    /*Muda o flex para colunas */
+    align-items: center;
+    /* Centralizar horizontalmente */
+    justify-content: center;
+    /* Centralizar verticalmente */
+    background-color: #FFFFFF;
+    border: 1px solid #E0E4EA;
+    border-radius: 8px;
+    padding: 48px;
 
 }
 
-.login-container img {
-
-    height: 60px;
-
+.title{
+    width: 444px;
+    text-align: start;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
 }
 
 .inpt {
 
     padding: 12px;
-    background-color: #F7F9FB;
     width: 444px;
     border: 1px solid #CACFD8;
     border-radius: 10px;
     margin-bottom: 16px;
-
 }
 
 .button {
-
     padding: 12px;
     font-size: 16px;
-    background-color:#335CFF;
+    background-color: #335CFF;
     color: #FFFFFF;
     width: 444px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    
+}
+
+.info{
+    width: 444px;
+    display: flex;
+    align-items: center;
+}
+
+.info-circle{
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
 }
 
 .error-message {
@@ -64,7 +105,7 @@ justify-content: center; /* Centralizar verticalmente */
     color: red;
     font-size: 13px;
     transform: translateY(-12px) translateX(-90px);
-    
+
 }
 
 .error-messagepassword {

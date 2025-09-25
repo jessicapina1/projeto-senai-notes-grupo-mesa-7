@@ -1,13 +1,14 @@
 <body>
 
     <header></header>
+
     <main class="page-container"> <!--Caixa maior-->
 
 
         <div class="login-container">
 
             <div class="logo">
-                <img src="imgs/pena.png" alt="icone pena">
+                <img class="pena" src="imgs/pena.png" alt="icone pena">
                 <h3 class="Senai-notes">Senai-notes</h3>
             </div>
 
@@ -15,18 +16,21 @@
             <h1 class="titulo">Create Your Account</h1>
             <h5 class="subtitulo">Sign up to start organizing your notes and boost your productivity</h5>
 
-            <input class="inpt" type="email" Placeholder="Email Address" formControlName="email">
-            <input class="inpt" type="password" placeholder="Password" formControlName="password">
+            <a class="title">Email Address</a>
+            <input class="inpt" type="email" Placeholder="email@exemple.com" formControlName="email">
+
+            <a class="title">Password</a>
+            <input class="inpt" type="password" formControlName="password">
+
+            <button class="button">sign Up</button>
 
             <div class="info">
-
-                <img src="imgs/info-circle.png" alt="icone informacao"> 
-                <h6>At least 8 characters</h6>
+                <img class="info-circle" src="imgs/info circle.png" alt="icone informacao"> 
+                <h4>At least 8 characters</h4>
             </div>
 
-            <button class="button">Sign Up</button>
 
-            <h6>Already have an account? Login</h6>
+            <a>Already have an account? Login</a>
 
         </div>
 
