@@ -2,7 +2,7 @@
 .page-container {
 
     display: flex;
-    background-color: #FFFFFF;   
+    background-color:#F3F5F8;   
 
 
 }
@@ -11,9 +11,8 @@
 .title {
 
     font-size: 24px;
-    font-family: "inter";
     font-weight: normal;
-    margin-bottom: 16px;
+    margin: 16px;
     font-weight: bold;
     
 
@@ -25,11 +24,10 @@
     padding: 10px;
     width: 377px;
     margin-bottom: 16px;
-    background-color: red;
+    background-color: #FFFFFF;
     border-radius: 10px;
-    border: none;
+    border: 1px solid #CACFD8;
     
-
     
 }
 
@@ -43,8 +41,8 @@
     background-color: #335CFF;
     color: #f7f9fb;
     width: 377px;
-
     cursor: pointer;
+    margin-top: 16px;
 
 }
 
@@ -59,16 +57,9 @@
 
 }
 
-/* .logo {
-
-    
-
-} */
-
 .subtitulo {
 
     font-size: 14px;
-    font-family: "inter";
     font-weight: 100px;
     margin-bottom: 16px;
     color: grey;
@@ -83,11 +74,11 @@
     border-radius: 15px;
     text-align: center;
     justify-content: center;
-    height: 55vh;
+    height: 65vh;
     background-color: white;
     width: 30vw;
-    box-shadow: 1px 8px 8px 8px #ccc;
-
+    border: 1px solid #E0E4EA;
+    
 
 }
 
@@ -103,12 +94,10 @@
 
 }
 
-.password {
+.alerts {
 
-display: flex;
-justify-content: flex-start;
-margin-left: 100px;
-font-family: 100px;
+    color: red;
+    font-size: 12px;
 
 }
 
@@ -118,16 +107,31 @@ font-family: 100px;
     font-weight: auto;
     font-size: 14px;
     color:grey;
-
-    margin-right: 135px;
+ 
 
 }
 
 .email {
     display: flex;
     justify-content: flex-start;
-    margin-left: 135px;
     font-size: 14px;
-    margin-top: 50px;
+    margin-bottom: 6px;
+
+}
+
+.login {
+
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.pass {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
 
 }

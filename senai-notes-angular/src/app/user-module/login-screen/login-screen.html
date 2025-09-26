@@ -7,7 +7,8 @@
 <main class="page-container">
 
     <div class="login-container">
-        <div class="borda-interna">
+        <div class="borda-interna" [formGroup]="loginForm">
+
             <div><img src="imgs/logosenainotes.png" alt="logoSenai"></div>
 
             <h1 class="title"> Welcome to note </h1>
@@ -15,18 +16,19 @@
             <p class="subtitulo"> Please log in to continue</p>
 
             <p class="email">Email Adress</p>
-            <input class="inpt" type="email" placeholder="email@example.com">
-            <div>
-                <p class="password">Password</p>
-            </div>
-            <a class="forgotPassword" href="/nova-senha"> Forgot Password</a>
 
-            <input class="inpt" type="password" placeholder="password">
+            <input class="inpt" type="email" placeholder="email@example.com" formControlName="email">
+            <span class="alerts">{{emailErrorMessage}}</span>
+            
+            <div class="pass"><p class="email">Password</p>
+        
+            <a class="forgotPassword" href="/nova-senha">Forgot</a></div>
+
+            <input class="inpt" type="password" formControlName="password">
+            <span class="alerts">{{passwordErrorMessage}}</span>
 
 
-            <button class="btm"> Login </button>
-
-            <!-- <img class="barra" src="" alt=""></img> -->
+            <button class="btm" (click)="onLoginClick()"> Login </button>
 
             <a class="form" href="/new-user"> No account yet? Sign Up </a>
 
