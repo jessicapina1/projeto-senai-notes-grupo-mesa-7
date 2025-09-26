@@ -18,5 +18,9 @@ export const routes: Routes = [
     {
         path: "notes",
         loadComponent: () => AllNotes
-}
+    },
+    {
+        path: "",
+        loadComponent: () => LoginScreen
+    }
 ];

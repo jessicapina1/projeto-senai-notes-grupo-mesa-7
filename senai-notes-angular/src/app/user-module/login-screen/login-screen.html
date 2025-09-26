@@ -7,13 +7,13 @@
 <main class="page-container">
 
     <div class="login-container">
-        <div class="borda-interna" [formGroup]="loginForm">
+        <div class="block" [formGroup]="loginForm">
 
             <div><img src="imgs/logosenainotes.png" alt="logoSenai"></div>
 
             <h1 class="title"> Welcome to note </h1>
 
-            <p class="subtitulo"> Please log in to continue</p>
+            <p class="subtitle"> Please log in to continue</p>
 
             <p class="email">Email Adress</p>
 
@@ -26,9 +26,12 @@
 
             <input class="inpt" type="password" formControlName="password">
             <span class="alerts">{{passwordErrorMessage}}</span>
+            <span class="alerts">{{loginFail}}</span>
 
 
             <button class="btm" (click)="onLoginClick()"> Login </button>
+
+            <div class="barra"></div>
 
             <a class="form" href="/new-user"> No account yet? Sign Up </a>
 

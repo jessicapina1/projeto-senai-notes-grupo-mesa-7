@@ -4,7 +4,6 @@
     display: flex;
     background-color:#F3F5F8;   
 
-
 }
 
 
@@ -15,8 +14,6 @@
     margin: 16px;
     font-weight: bold;
     
-
-
 }
 
 .inpt {
@@ -27,8 +24,7 @@
     background-color: #FFFFFF;
     border-radius: 10px;
     border: 1px solid #CACFD8;
-    
-    
+        
 }
 
 
@@ -57,7 +53,7 @@
 
 }
 
-.subtitulo {
+.subtitle {
 
     font-size: 14px;
     font-weight: 100px;
@@ -68,9 +64,9 @@
 
 }
 
-.borda-interna {
+.block {
 
-    padding: 48px;
+    padding: 70px;
     border-radius: 15px;
     text-align: center;
     justify-content: center;
@@ -133,5 +129,14 @@
     align-items: center;
     justify-content: space-between;
 
+
+}
+
+.barra {
+
+    border: 1px solid #E0E4EA;
+    width: 377px;
+    height: 1px;
+    margin-top: 16px;
 
 }

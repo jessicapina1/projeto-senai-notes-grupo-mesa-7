@@ -13,6 +13,7 @@ export class LoginScreen {
 
   emailErrorMessage: string;
   passwordErrorMessage: string;
+  loginFail: string;
 
   constructor (private fb: FormBuilder, private cd: ChangeDetectorRef) {
 
@@ -23,6 +24,7 @@ export class LoginScreen {
 
     this.emailErrorMessage = "";
     this.passwordErrorMessage = "";
+    this.loginFail= "";
   
     
   }
@@ -44,6 +46,7 @@ export class LoginScreen {
       this.passwordErrorMessage = "O campo de senha é obrigatório"         
       return false;
     }
+
 
     return true
   }
@@ -84,6 +87,10 @@ export class LoginScreen {
 
       window.location.href = "notes";
 
+    }
+     else {
+      this.loginFail = "Falha no login - revise as informações"
+      
     }
    
     this.cd.detectChanges();
