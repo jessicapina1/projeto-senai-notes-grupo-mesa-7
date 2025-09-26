@@ -7,6 +7,76 @@
 .header {
     display: flex;
     justify-content:space-between ;
-    padding: 5px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     margin-bottom: 20px;
+    border-bottom: 1px solid #E0E4EA;
 }
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.Search{
+    display: flex;
+    align-items: center;
+    
+}
+
+.imput{
+    width: 286px;
+    border-radius: 8px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-right: 16px;
+    padding-left: 16px;
+    border: 1px solid #E0E4EA;
+}
+
+.aside{
+
+    margin-left: 32px;
+}
+
+.button{
+    width: 310px;
+    height: 41px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 92px;
+    padding-right: 92px;
+    background-color: #335CFF;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.note{
+display: flex;
+height: 91px;
+width: 310px;
+background-color: #F3F5F8;
+border-radius: 8px;
+padding: 8px;
+margin-bottom: 4px;
+}
+
+.topicos{
+    margin-bottom: 12px;
+    margin-left: 12px;
+    align-items: center;
+}
+
+.quadradinho{
+    height: 18px;
+    display: flex;
+    background-color: #E0E4EA;
+    border-radius: 4px;
+    margin-left: 4px;
+}
+
