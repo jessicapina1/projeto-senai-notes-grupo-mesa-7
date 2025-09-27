@@ -3,31 +3,28 @@
 .logo {
     display: flex;
     align-items: center;
-}
-
-.pena{
-    width: 28px;
-    height: 28px;
-    margin-right: 10px;
-    
+    width: 157px;
+    height: 30px;
+    margin-bottom: 24px;
 }
 
 
 .titulo {
     font-size: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     font-weight: bold;
 }
 
 .subtitulo {
+    font-weight: normal;
+    width: 444px;
     font-size: 14px;
-    font-style: normal;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
+    color: #525866;
 }
 
 
 .page-container {
-
     display: flex;
     /* um ao lado do outro */
      flex-direction: column;
@@ -55,7 +52,7 @@
     /* Centralizar verticalmente */
     background-color: #FFFFFF;
     border: 1px solid #E0E4EA;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 48px;
 
 }
@@ -64,7 +61,7 @@
     width: 444px;
     text-align: start;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: medium;
     margin-bottom: 6px;
 }
 
@@ -75,6 +72,27 @@
     border: 1px solid #CACFD8;
     border-radius: 10px;
     margin-bottom: 16px;
+}
+
+
+.info{
+    width: 444px;
+    display: flex;
+    align-items: center;
+    color: #525866;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.info h4{
+font-size: 12px;
+ font-weight: normal;
+}
+
+.info-circle{
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
 }
 
 .button {
@@ -88,16 +106,23 @@
     cursor: pointer;
 }
 
-.info{
-    width: 444px;
-    display: flex;
-    align-items: center;
+
+.linha-horizontal{
+width:444px ;
+margin-top: 16px;
+margin-bottom: 16px;
+border: 1px solid #E0E4EA;
+
 }
 
-.info-circle{
-    height: 16px;
-    width: 16px;
-    margin-right: 10px;
+info2{
+    display: flex;
+}
+
+.already{
+    font-size: 14px;
+    font-weight: normal;
+    color: #525866;
 }
 
 .error-message {
