@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
+
 
 .header {
     display: flex;
@@ -10,7 +14,7 @@
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: 1px solid #E0E4EA;
 }
@@ -37,9 +41,36 @@
     border: 1px solid #E0E4EA;
 }
 
+.principal{
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: 700px; 
+}
+
+.img-note{
+  background-image: url(2de7e05758dcddcc09eac51c414a06aea9a22239.jpg);
+  border-radius: 15px;
+  width: 900px;
+  height: 150px;
+  background-size: cover;
+  z-index: 1;
+}
+
+.principal h1{
+    font-family: sans-serif;
+    margin-top: 10px;
+}
+
+.container {
+    display: flex;
+}
+
 .aside{
 
-    margin-left: 32px;
+    margin-left: 32px;  
+    height: 100vh;
+    width: 320px;
 }
 
 .button{
@@ -66,6 +97,8 @@ padding: 8px;
 margin-bottom: 4px;
 }
 
+
+
 .topicos{
     margin-bottom: 12px;
     margin-left: 12px;
@@ -80,3 +113,60 @@ margin-bottom: 4px;
     margin-left: 4px;
 }
 
+.tags {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    font-family: 'Inter', sans-serif;
+    color: #6B7280;
+    font-size: 14px;
+}
+
+.tag {
+    background-color: #E0E4EA;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.date {
+    align-self: center;
+}
+
+.divider {
+    margin: 16px 0;
+    border: none;
+    border-top: 1px solid #E0E4EA;
+}
+
+.content {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #1F2937;
+    line-height: 1.6;
+}
+
+.actions {
+    margin-top: 32px;
+    display: flex;
+    gap: 12px;
+}
+
+.save {
+    background-color: #335CFF;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cancel {
+    background-color: transparent;
+    color: #1F2937;
+    border: 1px solid #E0E4EA;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
