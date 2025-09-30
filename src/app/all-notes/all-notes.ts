@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './all-notes.css'
 })
 export class AllNotes {
+onEnterClick: any;
 
 }

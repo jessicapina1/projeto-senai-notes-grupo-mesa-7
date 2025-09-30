@@ -1,44 +1,38 @@
-<body>
+<main class="page-container">
+  <div class="login-container" [formGroup]="loginForm">
 
-    <header></header>
+    <div>
+      <img class="logo" src="imgs/logosenainotes.png" alt="logo senai notes" />
+    </div>
 
-    <main class="page-container"> <!--Caixa maior-->
+    <h1 class="titulo">Create Your Account</h1>
+    <h5 class="subtitulo">Sign up to start organizing your notes and boost your productivity.</h5>
 
+    <a class="title">Email Address</a>
+    <input class="inpt" type="email" placeholder="email@example.com" formControlName="email" />
 
-        <div class="login-container">
+    <a class="title">Password</a>
+    <input class="inpt" type="password" formControlName="password" />
 
-            <div>
-                <img class="logo" src="imgs/logosenainotes.png" alt="logo senai notes">
-            </div>
+    <div class="info">
+      <img class="info-circle" src="imgs/info circle.png" alt="icone informacao" />
+      <h4>At least 8 characters</h4>
+    </div>
 
+ 
+    <div *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</div>
+    <div *ngIf="successMessage" style="color: green;">{{ successMessage }}</div>
 
-            <h1 class="titulo">Create Your Account</h1>
-            <h5 class="subtitulo">Sign up to start organizing your notes and boost your productivity.</h5>
+    
 
-            <a class="title">Email Address</a>
-            <input class="inpt" type="email" Placeholder="email@exemple.com" formControlName="email">
+    <button class="button" (click)="onSignUp()">Sign Up</button>
 
-            <a class="title">Password</a>
-            <input class="inpt" type="password" formControlName="password">
+    <div class="linha-horizontal"></div>
 
-            <div class="info">
-                <img class="info-circle" src="imgs/info circle.png" alt="icone informacao"> 
-                <h4>At least 8 characters</h4>
-            </div>
-
-            <button class="button">Sign Up</button>
-
-           <div class="linha-horizontal"></div>
-            
-           <div class="info2">
-            <a class="already">Already have an account?</a>
-            <a class="login2"> Login</a>
-            </div>
-
-
-        </div>
-
-    </main> <!--Caixa maior-->
-
-    <footer></footer>
-</body>
+    <div class="info2">
+      <a class="already">Already have an account?</a>
+      <a class="login2" routerLink="/login">Login</a>
+    </div>
+    
+  </div>
+</main>
