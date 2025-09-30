@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './new-user-screen.html',
   styleUrl: './new-user-screen.css',
 })
+
 export class NewUserScreen {
   loginForm: FormGroup;
   errorMessage = '';
