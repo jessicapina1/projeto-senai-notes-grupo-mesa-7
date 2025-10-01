@@ -1,5 +1,5 @@
 <main class="page-container">
-  <div class="login-container" [formGroup]="loginForm">
+  <div class="login-container" [formGroup]="registerForm">
 
     <div>
       <img class="logo" src="imgs/logosenainotes.png" alt="logo senai notes" />
@@ -7,6 +7,10 @@
 
     <h1 class="titulo">Create Your Account</h1>
     <h5 class="subtitulo">Sign up to start organizing your notes and boost your productivity.</h5>
+
+
+    <a class="title">Seu nome</a>
+    <input class="inpt" type="name" placeholder="Nome" formControlName="name" />
 
     <a class="title">Email Address</a>
     <input class="inpt" type="email" placeholder="email@example.com" formControlName="email" />
