@@ -7,15 +7,15 @@
         </div>
 
         <div class="Search">
-            <input class="imput" type="text" Placeholder="Search by title, content or tags..." formControlName="Search">
-            <img class="icon-login" src="imgs/icon-login.png" alt="icone login">
+            <input class="imput" type="text" Placeholder="Search by title, content or tags...">
+            <img (click)="deslogar()" class="icon-login" src="imgs/icon-login.png" alt="icone login">
         </div>
     </div>
 
     <div class="container">
 
         <aside class="aside">
-            <button class="button" (click)="onEnterClick()">+ Create New Note</button>
+            <button class="button" (click)="novaNota()">+ Create New Note</button>
             <div class="note">
                 <img class="capinha" src="imgs/Rectangle.png" alt="imagem do lado">
                 <div class="topicos">
@@ -28,7 +28,21 @@
                     <h5>29 Oct 2024</h5>
                 </div>
             </div>
+
+            @for (note of notes; track $index) {
+
+            <a (click)="onNoteClick(note)">
+                <i class="fa-regular fa-message"></i>
+                {{ note.noteTitle }}
+            </a>
+
+            }
+
         </aside>
+
+
+        @if(notaSelecionada == null) {
+
 
         <div class="principal">
 
@@ -82,5 +96,52 @@
 
 
         </div>
-    </div>
+        }
+
+        @if (notaSelecionada != null) {
+
+        <div class="principal">
+
+            <div class="img-note">
+
+            </div>
+
+            <h2>{{ notaSelecionada.noteTitle }}</h2>
+
+            <div class="meta-info">
+                <div class="row">
+                    <span class="label">Tags</span>
+                    <span class="value">Dev</span>
+                </div>
+                <div class="row">
+                    <span class="label">Last edited</span>
+                    <span class="value">29 Oct 2024</span>
+                </div>
+            </div>
+
+            <div>
+            <!-- <input [formControl]="notaUsuario" type="text" placeholder="Start Typing your note here" > -->
+            </div>
+
+
+            <div class="actions">
+                <button class="save" (click) = "salvarNota()">Save Note</button>
+                <button class="cancel">Cancel</button>
+            </div>
+
+
+
+
+            </div>
+
+            }
+
+
+
+
+
+
+
+        </div>
+
 </main>

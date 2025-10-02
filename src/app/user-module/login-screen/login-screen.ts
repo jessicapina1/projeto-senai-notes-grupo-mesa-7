@@ -85,6 +85,8 @@ export class LoginScreen {
       localStorage.setItem("meuToken", meuToken);
       localStorage.setItem("meuId", userId);
 
+      this.loginForm.value.email = "";
+
       window.location.href = "notes";
 
     }
