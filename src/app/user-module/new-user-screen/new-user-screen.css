@@ -41,7 +41,7 @@
 .login-container {
 
     width: 540px;
-    height: 526px;
+    height: 600px;
     display: flex;
     /*Ativar o flex */
     flex-direction: column;
@@ -116,7 +116,7 @@ border: 1px solid #E0E4EA;
 
 }
 
-info2{
+.info2{
     display: flex;
 }
 
