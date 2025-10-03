@@ -4,14 +4,25 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angul
 import { firstValueFrom } from 'rxjs';
 
 interface INotes {
-  noteTitle: string;
-  id: number;
-  userId: string;
+  titulo: string;
+  descricao: string;
+  usuarioID: string;
+  id: number
 
-}
+  // noteTitle: string;
+  // id: number;
+  // userId: string;
+
+
+  
+//             "titulo": "titulo da nota",
+//             "descricao": "descricao da nota",
+//             "imagemUrl": "link da imagem",
+//             "usuarioID": 1,
+ }
 
 interface IText {
-  chatId: number;
+  noteId: number;
   text: string;
   userId: string;
   id: number;
@@ -54,7 +65,7 @@ export class AllNotes {
   }
 
   async getNotes() {
-    let response = await firstValueFrom(this.http.get("https://senai-gpt-api.azurewebsites.net/chats", {
+    let response = await firstValueFrom(this.http.get("http://localhost:3000/notas", {
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("meuToken")
       }
@@ -63,8 +74,16 @@ export class AllNotes {
     })) as INotes[];
 
     if (response) {
-      let userId = localStorage.getItem("meuId");
-      response = response.filter(notes=>notes.userId == userId);
+      let usuarioID = localStorage.getItem("meuId");
+
+      // if (usuarioID != null) {
+
+        // let usuarioIDNumber = Number(usuarioID);
+
+        response = response.filter(notes=>notes.usuarioID == usuarioID);
+
+      
+      
 
       //mostra os chats na tela
       this.notes = response as [];
@@ -87,7 +106,7 @@ export class AllNotes {
     this.notaSelecionada = notaClicada;
 
     //Logica para buscar as mensagens.
-    let response = await firstValueFrom(this.http.get("https://senai-gpt-api.azurewebsites.net/messages?chatId=" + notaClicada.id, {
+    let response = await firstValueFrom(this.http.get("http://localhost:3000/notas/" + notaClicada.id, {
       headers: {
 
         "Authorization": "Bearer " + localStorage.getItem("meuToken")
@@ -107,13 +126,13 @@ export class AllNotes {
   async salvarNota () {
 
     let novaNotaUsuario = {
-      chatId: this.notaSelecionada.id,
-      userId: localStorage.getItem("meuId"),
+      noteId: this.notaSelecionada.id,
+      usuarioID: localStorage.getItem("meuId"),
       text: this.notaUsuario.value
     };
 
     //1- salva as mensagens do usuario no banco de dados.
-    let novaNotaUsuarioResponse = await firstValueFrom(this.http.post("https://senai-gpt-api.azurewebsites.net/messages", novaNotaUsuario, {
+    let novaNotaUsuarioResponse = await firstValueFrom(this.http.post("http://localhost:3000/notas", novaNotaUsuario, {
       headers: {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem("meuToken")
@@ -123,43 +142,10 @@ export class AllNotes {
 
     await this.onNoteClick(this.notaSelecionada); //atualiza as mensagens da tela
 
-    //2- enviar a mensagem do usuario para a IA responder
-    // let respostaIAResponse = await firstValueFrom(this.http.post("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent", {
-    //   "contents": [ {
-    //     "parts": [
-    //       {
-    //         "text": this.mensagemUsuario.value + ". Me dê uma resposta objetiva."
-    //       }
-    //     ]
-    //   }
-    // ]
-    // }, {
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "X-goog-api-key": "AIzaSyDV2HECQZLpWJrqCKEbuq7TT5QPKKdLOdo"
-    //   }
-    // })) as any;
-
-    // let novaRespostaIA = {
-
-    //   chatId: this.chatSelecionado.id,
-    //   userId: "chatbot",
-    //   text: respostaIAResponse.candidates[0].content.parts[0].text,
-    //   //id a api gera
-    // }
-
-    // //3- salva a resposta da IA no banco de dados
-    // let novaRespostaIAResponse = await firstValueFrom(this.http.post("https://senai-gpt-api.azurewebsites.net/messages", novaRespostaIA, {
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     "Authorization": "Bearer " + localStorage.getItem("meuToken")
-    //   }
-
-    // }));
-
-    await this.onNoteClick(this.notaSelecionada);
 
   }
+
+
 
   async novaNota () {
 
@@ -172,12 +158,13 @@ export class AllNotes {
     }
     const novaNotaObj = {
 
-      noteTitle: nomeNota,
-      userId: localStorage.getItem ("meuId"),
+      titulo: nomeNota,
+      descricao: "",
+      usuarioID: localStorage.getItem ("meuId"),
 
       //id - sera gerado pelo backend quando cadastrar
       }
-      let novaNotaResponse = await firstValueFrom(this.http.post("https://senai-gpt-api.azurewebsites.net/chats", novaNotaObj, {
+      let novaNotaResponse = await firstValueFrom(this.http.post("http://localhost:3000/notas", novaNotaObj, {
       headers: {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem("meuToken")
