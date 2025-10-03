@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ChangeDetectorRef} from '@angular/core';
+import { ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
@@ -15,15 +15,16 @@ export class NewUserScreen {
 
   registerForm: FormGroup;
 
-  emailErrorMessage: string; 
+  emailErrorMessage: string;
   passwordErrorMessage: string;
   confirmPasswordErrorMessage: string;
   approvedMessage: string;
   usernameErrorMessage: string;
   errorMessage: string;
   successMessage: string;
+  darkMode: boolean = false;
 
-  
+
   constructor(private fb: FormBuilder, private cd: ChangeDetectorRef) {
     // Quando a tela iniciar.
 
@@ -53,15 +54,24 @@ export class NewUserScreen {
     console.log("Email", this.registerForm.value.email);
     console.log("Password", this.registerForm.value.password);
     console.log("Criar nova conta de usuário", this.registerForm.value.name);
-    
-          
-    if (this.registerForm.value.name === ""){
+
+
+    let darkModeLocalStorage = localStorage.getItem("darkMode");
+
+    if (darkModeLocalStorage == "true") {
+      this.darkMode = true;
+      document.body.classList.toggle("dark-mode", this.darkMode);
+    }
+
+
+
+    if (this.registerForm.value.name === "") {
 
       this.usernameErrorMessage = "O campo usuário é obrigatório.";
 
-    } 
-    
-    if (this.registerForm.value.email === ""){
+    }
+
+    if (this.registerForm.value.email === "") {
 
       this.emailErrorMessage = "O campo e-mail é obrigatório.";
 
@@ -69,7 +79,7 @@ export class NewUserScreen {
 
     }
 
-    if (this.registerForm.value.password === ""){
+    if (this.registerForm.value.password === "") {
 
       // alert("Preencha a senha.")
       this.passwordErrorMessage = "O campo senha é obrigatório.";
@@ -77,7 +87,7 @@ export class NewUserScreen {
 
     }
 
-      const userData = {
+    const userData = {
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
       name: this.registerForm.value.name
@@ -95,18 +105,18 @@ export class NewUserScreen {
     //   }
 
     // );
-    
+
     let response = await fetch("https://senai-gpt-api.azurewebsites.net/users", {
       method: "POST", // Enviar,
       headers: {
-        "Content-Type" : "application/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(userData)
     });
 
     console.log("STATUS CODE", response.status);
-   
-    if (response.status >= 200 && response.status <=299) {
+
+    if (response.status >= 200 && response.status <= 299) {
       //alert("Requisição bem-sucedida");
       this.approvedMessage = "Login concluido com sucesso!"
 
@@ -118,9 +128,16 @@ export class NewUserScreen {
 
     } else {
       alert("Credenciais incorretas.");
-    } 
+    }
 
     this.cd.detectChanges(); // Força uma atualização da tela.
+  }
 
+  ligarDesligarDarkMode () {
 
-  }}
+      this.darkMode = !this.darkMode; // o inverso do this.darkmode.
+      document.body.classList.toggle("dark-mode", this.darkMode);
+
+      localStorage.setItem("darkMode", this.darkMode.toString());
+    }
+}

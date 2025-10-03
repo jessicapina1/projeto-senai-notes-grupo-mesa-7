@@ -157,3 +157,34 @@ border: 1px solid #E0E4EA;
     color: black;
     padding: 16px;
 }
+
+
+
+
+
+
+::ng-deep body.dark-mode .page-container  {
+    background-color: #2B303B !important;
+} 
+
+::ng-deep body.dark-mode .login-container {
+    background-color: #0E121B !important;
+} 
+
+::ng-deep body.dark-mode .titulo {
+    color: #FFFFFF !important;
+} 
+
+::ng-deep body.dark-mode .subtitulo {
+    color: #FFFFFF !important;
+} 
+
+::ng-deep body.dark-mode .inpt {
+    background-color: #0E121B !important;
+    color: #FFFFFF;
+} 
+
+::ng-deep body.dark-mode .title {
+    color: #FFFFFF; 
+} 
+
