@@ -31,6 +31,7 @@ export class AllNotes {
   notaSelecionada: INotes;
   textNote: IText[];
   notaUsuario = new FormControl("");
+  darkMode: boolean = false;
 
 
   constructor(private http: HttpClient, private cd:ChangeDetectorRef) {
@@ -42,6 +43,13 @@ export class AllNotes {
   ngOnInit() {
 
     this.getNotes();
+
+     let darkModeLocalStorage = localStorage.getItem("darkMode");
+
+    if (darkModeLocalStorage == "true") {
+      this.darkMode = true;
+      document.body.classList.toggle("dark-mode", this.darkMode);
+    }
 
   }
 
