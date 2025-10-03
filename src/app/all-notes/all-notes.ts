@@ -21,13 +21,13 @@ interface INotes {
 //             "usuarioID": 1,
  }
 
-interface IText {
-  noteId: number;
-  text: string;
-  userId: string;
-  id: number;
+// interface IText {
+//   noteId: number;
+//   text: string;
+//   userId: string;
+//   id: number;
 
-}
+// }
 
 @Component({
   selector: 'app-all-notes',
@@ -40,14 +40,16 @@ export class AllNotes {
   onEnterClick: any;
   notes: INotes[];
   notaSelecionada: INotes;
-  textNote: IText[];
+  // textNote: IText[];
   notaUsuario = new FormControl("");
+  descricao: INotes[];
 
 
   constructor(private http: HttpClient, private cd:ChangeDetectorRef) {
     this.notaSelecionada = null!;
-    this.textNote = [];
+    // this.textNote = [];
     this.notes = [];
+    this.descricao = []
 
   }
   ngOnInit() {
@@ -109,7 +111,7 @@ export class AllNotes {
 
     console.log ("TEXTO DA NOTA", response);
 
-    this.textNote = response as IText[]; ///verificar se nao seri INotes
+    this.descricao = response as INotes[]; ///verificar se nao seri INotes
 
     this.cd.detectChanges();
 
