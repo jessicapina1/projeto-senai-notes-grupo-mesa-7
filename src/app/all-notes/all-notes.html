@@ -19,7 +19,7 @@
             <div class="note">
                 <img class="capinha" src="imgs/Rectangle.png" alt="imagem do lado">
                 <div class="topicos">
-                    <a class="text">React Performance Optimization.</a>
+                    <a class="text">MODELO DE NOTA</a>
 
                     <div class="linguagem">
                         <h5 class="quadradinho">Dev</h5>
@@ -30,11 +30,18 @@
             </div>
 
             @for (note of notes; track $index) {
-
-            <a (click)="onNoteClick(note)">
-                <i class="fa-regular fa-message"></i>
-                {{ note.noteTitle }}
-            </a>
+                
+                <div class="note" (click)="onNoteClick(note)">
+                    <img class="capinha" src="imgs/Rectangle.png" alt="imagem do lado">
+                    <div class="topicos">
+                    <a class="text">{{ note.titulo }}</a>
+                    <div class="linguagem">
+                        <h5 class="quadradinho">Dev</h5>
+                        <h5 class="quadradinho">React</h5>
+                    </div>
+                    <h5>29 Oct 2024</h5>
+                </div>
+            </div>
 
             }
 
@@ -102,11 +109,13 @@
 
         <div class="principal">
 
-            <div class="img-note">
+            <div class="input-de-imagem">
+
+                IMAGEM A SER INSERIDA PELO USUARIO
 
             </div>
 
-            <h2>{{ notaSelecionada.noteTitle }}</h2>
+            <h2>{{ notaSelecionada.titulo }}</h2>
 
             <div class="meta-info">
                 <div class="row">
@@ -120,7 +129,7 @@
             </div>
 
             <div>
-            <!-- <input [formControl]="notaUsuario" type="text" placeholder="Start Typing your note here" > -->
+            <input type="text" placeholder="Start Typing your note here" >
             </div>
 
 
