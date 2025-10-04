@@ -225,3 +225,28 @@ margin-bottom: 4px;
     background-color: GREY;
 
 }
+
+.input-da-nota {
+
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-items: flex-start;
+    align-items: start;
+
+    font-family: 'Inter';
+
+    
+
+}
+
+.input-do-titulo {
+    width: 900px;
+    height: 30px;
+    display: flex;
+    justify-items: flex-start;
+    align-items: start;
+
+    font-family: 'Inter';
+
+}
