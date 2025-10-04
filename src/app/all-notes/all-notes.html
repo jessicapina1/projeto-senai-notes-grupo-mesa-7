@@ -115,7 +115,9 @@
 
             </div>
 
-            <h2>{{ notaSelecionada.titulo }}</h2>
+            <!-- <h2>{{ notaSelecionada.titulo }}</h2> -->
+
+            <input class="input-do-titulo" type="text" [formControl]="tituloNota">
 
             <div class="meta-info">
                 <div class="row">
@@ -128,8 +130,9 @@
                 </div>
             </div>
 
+            <div class="barra-notas"></div>
             <div>
-            <input type="text" placeholder="Start Typing your note here" >
+            <input class="input-da-nota" type="text" placeholder="Start Typing your note here" [formControl]="descricao">
             </div>
 
 
