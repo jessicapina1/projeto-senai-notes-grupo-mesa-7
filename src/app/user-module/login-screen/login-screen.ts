@@ -14,6 +14,7 @@ export class LoginScreen {
   emailErrorMessage: string;
   passwordErrorMessage: string;
   loginFail: string;
+  darkMode: boolean = false;
 
   constructor (private fb: FormBuilder, private cd: ChangeDetectorRef) {
 
@@ -53,6 +54,14 @@ export class LoginScreen {
 
 
   async onLoginClick() {
+
+    let darkModeLocalStorage = localStorage.getItem("darkMode");
+
+    if (darkModeLocalStorage == "true") {
+      this.darkMode = true;
+      document.body.classList.toggle("dark-mode", this.darkMode);
+    }
+
     
     let hasError = this.validacoes();
 
@@ -97,5 +106,14 @@ export class LoginScreen {
    
     this.cd.detectChanges();
 
+  }
+
+  
+  ligarDesligarDarkMode () {
+
+    this.darkMode = !this.darkMode; // o inverso do this.darkmode.
+    document.body.classList.toggle("dark-mode", this.darkMode);
+
+    localStorage.setItem("darkMode", this.darkMode.toString());
   }
 }
