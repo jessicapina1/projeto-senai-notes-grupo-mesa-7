@@ -3,7 +3,7 @@
 
         <div class="logo">
             <img class="pena" src="imgs/pena.png" alt="icone pena">
-            <h3 class="Senai-notes">Senai notes.</h3>
+            <h3 class="Senai-notes">Senai notes</h3>
         </div>
 
         <div class="Search">
@@ -16,7 +16,7 @@
 
         <aside class="aside">
             <button class="button" (click)="novaNota()">+ Create New Note</button>
-            <div class="note">
+            <!-- <div class="note">
                 <img class="capinha" src="imgs/Rectangle.png" alt="imagem do lado">
                 <div class="topicos">
                     <a class="text">MODELO DE NOTA</a>
@@ -27,12 +27,12 @@
                     </div>
                     <h5>29 Oct 2024</h5>
                 </div>
-            </div>
+            </div> -->
 
             @for (note of notes; track $index) {
                 
                 <div class="note" (click)="onNoteClick(note)">
-                    <img class="capinha" src="imgs/Rectangle.png" alt="imagem do lado">
+                    <img src="imgs/Rectangle.png" alt="imagem do lado">
                     <div class="topicos">
                     <a class="text">{{ note.titulo }}</a>
                     <div class="linguagem">
@@ -130,30 +130,23 @@
                 </div>
             </div>
 
-            <div class="barra-notas"></div>
             <div>
-            <input class="input-da-nota" type="text" placeholder="Start Typing your note here" [formControl]="descricao">
+                <textarea class="input-da-nota" name="" id="" [formControl]="descricao"></textarea>
+            <!-- <input class="input-da-nota" type="text" placeholder="Start Typing your note here" [formControl]="descricao"> -->
             </div>
-
-
+       
             <div class="actions">
                 <button class="save" (click) = "salvarNota()">Save Note</button>
                 <button class="cancel">Cancel</button>
             </div>
-
-
-
-
+          
             </div>
+
+            <button class="delete" (click)="deletarNota()"><i class="fa-solid fa-trash-can"></i>Deletar Nota</button>
 
             }
 
-
-
-
-
-
-
         </div>
+    
 
 </main>

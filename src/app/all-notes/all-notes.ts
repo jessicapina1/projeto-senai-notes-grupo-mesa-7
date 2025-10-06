@@ -61,8 +61,6 @@ export class AllNotes {
 
         response = response.filter(notes=>notes.usuarioID == usuarioID);     
       
-
-      //mostra os chats na tela
       this.notes = response;
 
 
@@ -134,8 +132,6 @@ export class AllNotes {
 
   }
 
-
-
   async novaNota () {
 
     const nomeNota = prompt("Digite o nome da nova nota:");
@@ -180,4 +176,29 @@ export class AllNotes {
 
 
   }
-}
+
+  async deletarNota () {
+
+    let confirmation = confirm("Deseja realmente deletar a nota " + this.notaSelecionada.titulo + "?")
+    if (!confirmation) {
+      return
+    }
+    try {
+      let deleteResponse = await firstValueFrom (this.http.delete("http://localhost:3000/notas/"+this.notaSelecionada.id,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.getItem("meuToken")
+            }
+          }
+            )) as INotes;
+          } catch (error) {
+            console.log("Erro no delete: " + error);
+          }
+          await this.getNotes();
+
+          this.notaSelecionada = null!;
+
+          this.cd.detectChanges();
+        } 
+      } 

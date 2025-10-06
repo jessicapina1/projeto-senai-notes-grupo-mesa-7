@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 
 * {
     padding: 0;
@@ -45,25 +47,27 @@
 .principal {
     display: flex;
     flex-direction: column;
-    width: 950px;
-    height: 742px; 
+    width: 770px;
+    height: 819px; 
     border-left: 1px solid #E0E4EA;
     box-shadow: -1px 0 0 #E0E4EA inset;
     padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 20px;
 }
 
 
 .img-note{
-  background-image: url(imagem1.jpg);
+  background-image: url("/imgs/Rectangle 44.jpg");
   border-radius: 15px;
-  width: 900px;
-  height: 150px;
+  width: 722px;
+  height: 135px;
   background-size: cover;
   z-index: 1;
 }
 
 .principal h1{
-    font-family: sans-serif;
+
     margin-top: 10px;   
 }
 
@@ -73,9 +77,11 @@
 
 .aside{
 
-    margin-left: 32px;  
+    padding-left: 32px;
+    padding-right: 16px;
+    padding-top: 20px;
     height: 100vh;
-    width: 320px;
+    width: 358px;
 }
 
 .button{
@@ -95,25 +101,46 @@
 
 .note{
 display: flex;
-height: 91px;
+height: 94px;
 width: 310px;
-background-color: #F3F5F8;
-border-radius: 8px;
+background-color: transparent;
 padding: 8px;
 margin-bottom: 4px;
+cursor: pointer;
+border-bottom: 1px solid #E0E4EA;
+
 }
 
+.note h5 {
+    font-weight: 400;
+    font-size: 12px;
+}
 
+.note:hover {
+
+   background-color: #F3F5F8; 
+}
+
+.note img {
+    width: 57px;
+    height: 75px;
+
+}
 
 .topicos{
-    margin-bottom: 12px;
+    /* margin-bottom: 12px; */
     margin-left: 12px;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .text {
-    font-size: 14px;
-    font-weight: bold;
+
+    font-size: 16px;
+    font-weight: 600;
+    
 }
 
 .linguagem {
@@ -127,7 +154,12 @@ margin-bottom: 4px;
     display: flex;
     background-color: #E0E4EA;
     border-radius: 4px;
-    margin-left: 4px;
+    margin-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+
 }
 
 .tags {
@@ -163,7 +195,7 @@ margin-bottom: 4px;
 }
 
 .actions {
-    border-top: 1px solid #E0E4EA;
+    /* border-top: 1px solid #E0E4EA; */
     margin-top: 30px;
     display: flex;
     gap: 12px;
@@ -214,51 +246,75 @@ margin-bottom: 4px;
 
 .meta-info .value {
     color: #1F2937;
-    ;
 }
 
 
 .input-de-imagem {
 
-    width: 900px;
-    height: 150px;
+    width: 722px;
+    height: 135px;
     background-color: GREY;
+    border-radius: 15px;
 
 }
 
 .input-da-nota {
 
-    width: 900px;
-    height: 300px;
-    display: flex;
-    justify-items: flex-start;
-    align-items: start;
+    width: 100%;
+    height: 432px;
+    font-family:'Inter';
+    border-bottom: 1px solid #E0E4EA;
+    border-top: 1px solid #E0E4EA;
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 16px;
+    border-left: none;
+    border-right: none;
+    margin-top: 16px;
 
-    font-family: 'Inter';
-
-    border: none
 
 }
     
-.barra-notas {
+/* .barra-notas {
 
-    width: 900px;
-    background-color: #6B7280;
+    width: 735px;
+    background-color: #E0E4EA;
     height: 1px;
     margin-top: 16px;
     margin-bottom: 16px;
 
-
-}
+} */
 
 .input-do-titulo {
-    width: 900px;
+    width: 744px;
     height: 30px;
-    display: flex;
-    justify-items: flex-start;
-    align-items: start;
     margin-top: 16px;
-
     font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 700;
+    border: none;
 
 }
+
+.delete {
+
+    height: 44px;
+    width: 242px;
+    border: 1px solid #E0E4EA;
+    font-family: "Inter";
+    border-radius: 8px;
+    text-align: left;
+    padding: 12px;
+    cursor: pointer;
+    margin: 16px;
+    background-color: transparent;
+    
+}
+
+.Senai-notes {
+
+    font-size: 23px;
+    font-weight: 400;
+    font-family: "K2D";
+}
+
