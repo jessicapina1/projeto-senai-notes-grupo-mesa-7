@@ -327,3 +327,13 @@ border-bottom: 1px solid #E0E4EA;
     font-family: "K2D";
 }
 
+.row select {
+
+    background-color: bisque;
+    padding: 6px;
+    font-size: 12px;
+    border: 1px solid #E0E4EA;
+    border-radius: 8px;
+
+}
+
