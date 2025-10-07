@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
 
 interface INotes {
@@ -9,13 +9,14 @@ interface INotes {
   descricao: string;
   usuarioID: string;
   id: number;
+  tags: string
   // imagemUrl: 
 
  }
 
 @Component({
   selector: 'app-all-notes',
-  imports: [ReactiveFormsModule,CommonModule],
+  imports: [ReactiveFormsModule,CommonModule,FormsModule],
   templateUrl: './all-notes.html',
   styleUrl: './all-notes.css'
 })
@@ -27,6 +28,16 @@ export class AllNotes {
   tituloNota = new FormControl("");
   descricao = new FormControl ("");
   darkMode: boolean = false;
+
+  tagSelecionada = '';
+  tagsDisponiveis = [
+
+    "dev",
+    "cooking",
+    "work",
+    "home"
+
+  ];
 
 
   constructor(private http: HttpClient, private cd:ChangeDetectorRef) {
@@ -81,8 +92,12 @@ export class AllNotes {
     this.notaSelecionada = notaClicada;
 
     this.tituloNota.setValue(this.notaSelecionada.titulo);
-    this.descricao.setValue(this.notaSelecionada.descricao)
-    
+    this.descricao.setValue(this.notaSelecionada.descricao);
+    if ( this.notaSelecionada.tags!= null && this.notaSelecionada.tags.length>0) {
+    this.tagSelecionada = this.notaSelecionada.tags[0]}
+    else {
+      this.tagSelecionada = ""
+    }
 
     //Logica para buscar as mensagens.
     let response = await firstValueFrom(this.http.get("http://localhost:3000/notas/" + notaClicada.id, {
@@ -104,7 +119,8 @@ export class AllNotes {
       id: this.notaSelecionada.id,
       usuarioID: localStorage.getItem("meuId"),
       titulo: this.tituloNota.value,
-      descricao: this.descricao.value
+      descricao: this.descricao.value,
+      tags: [this.tagSelecionada]
     };
 
     //1- salva as mensagens do usuario no banco de dados.
@@ -126,8 +142,20 @@ export class AllNotes {
 
     })) as INotes;
 
+    let tagSelecionadaReponse = await firstValueFrom(this.http.put("http://localhost:3000/notas/"+ this.notaSelecionada.id, novaNotaUsuario, {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + localStorage.getItem("meuToken")
+
+      }
+    })) as INotes;
+
+
+
+
     await this.onNoteClick(notaAtualizadaResponse); //atualiza as mensagens da tela
     await this.onNoteClick(textoAtualizadoResponse);
+    await this.onNoteClick(tagSelecionadaReponse);
     await this.getNotes();
 
   }

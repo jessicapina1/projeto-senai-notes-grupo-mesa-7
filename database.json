@@ -82,20 +82,29 @@
     {
       "id": "827a",
       "usuarioID": "f308e80f-d2fe-471d-95ab-70228ba2ed61",
-      "titulo": "nota 10",
-      "descricao": "texto nota 10 alinhamento do texto"
+      "titulo": "nota 11",
+      "descricao": "novo texto",
+      "tags": [
+        "work"
+      ]
     },
     {
       "id": "1934",
       "usuarioID": "f308e80f-d2fe-471d-95ab-70228ba2ed61",
       "titulo": "nota 20",
-      "descricao": "texto nota 20"
+      "descricao": "texto nota 20",
+      "tags": [
+        "dev"
+      ]
     },
     {
       "id": "20ea",
       "usuarioID": "f308e80f-d2fe-471d-95ab-70228ba2ed61",
       "titulo": "nota 30",
-      "descricao": "texto nota 30"
+      "descricao": "texto nota 30",
+      "tags": [
+        "cooking"
+      ]
     },
     {
       "id": "f9cd",
@@ -113,7 +122,10 @@
       "id": "476f",
       "usuarioID": "f308e80f-d2fe-471d-95ab-70228ba2ed61",
       "titulo": "nota 55",
-      "descricao": ""
+      "descricao": "",
+      "tags": [
+        "home"
+      ]
     },
     {
       "id": "5480",
