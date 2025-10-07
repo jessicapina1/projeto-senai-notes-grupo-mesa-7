@@ -131,10 +131,11 @@
 
 .barra {
 
-    border: 1px solid #E0E4EA;
+    border: none;
+    background-color: transparent;
     width: 377px;
-    height: 1px;
-    margin-top: 16px;
+    height: 20px;
+    margin-bottom: 10px;
 
 }
 

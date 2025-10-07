@@ -126,6 +126,10 @@ border: 1px solid #E0E4EA;
     color: #525866;
 }
 
+.login2 {
+    font-size: 14px;
+}
+
 .error-message {
 
     color: red;
@@ -158,10 +162,16 @@ border: 1px solid #E0E4EA;
     padding: 16px;
 }
 
+.barra {
 
+    border: none;
+    background-color: transparent;
+    width: 377px;
+    height: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 
-
-
+}
 
 ::ng-deep body.dark-mode .page-container  {
     background-color: #2B303B !important;
