@@ -77,8 +77,7 @@ export class AllNotes {
 
     } else {
 
-      console.log("Erro ao buscar as notas.");
-
+      console.log("Erro ao buscar as notas");
 
     }
 
@@ -86,8 +85,6 @@ export class AllNotes {
   }
 
   async onNoteClick(notaClicada: INotes) {
-
-    // console.log("Nota Clicada", notaClicada);
 
     this.notaSelecionada = notaClicada;
 
@@ -99,7 +96,6 @@ export class AllNotes {
       this.tagSelecionada = ""
     }
 
-    //Logica para buscar as mensagens.
     let response = await firstValueFrom(this.http.get("http://localhost:3000/notas/" + notaClicada.id, {
       headers: {
 
@@ -123,7 +119,6 @@ export class AllNotes {
       tags: [this.tagSelecionada]
     };
 
-    //1- salva as mensagens do usuario no banco de dados.
     let notaAtualizadaResponse = await firstValueFrom(this.http.put("http://localhost:3000/notas/"+ this.notaSelecionada.id, novaNotaUsuario, {
       headers: {
         "Content-Type": "application/json",
@@ -132,30 +127,8 @@ export class AllNotes {
 
     })) as INotes;
 
-    let textoAtualizadoResponse = await firstValueFrom(this.http.put("http://localhost:3000/notas/"+ this.notaSelecionada.id, novaNotaUsuario, {
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + localStorage.getItem("meuToken")
-
-      }
-
-
-    })) as INotes;
-
-    let tagSelecionadaReponse = await firstValueFrom(this.http.put("http://localhost:3000/notas/"+ this.notaSelecionada.id, novaNotaUsuario, {
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + localStorage.getItem("meuToken")
-
-      }
-    })) as INotes;
-
-
-
-
+ 
     await this.onNoteClick(notaAtualizadaResponse); //atualiza as mensagens da tela
-    await this.onNoteClick(textoAtualizadoResponse);
-    await this.onNoteClick(tagSelecionadaReponse);
     await this.getNotes();
 
   }
@@ -175,7 +148,6 @@ export class AllNotes {
       descricao: "",
       usuarioID: localStorage.getItem ("meuId"),
 
-      //id - sera gerado pelo backend quando cadastrar
       }
       let novaNotaResponse = await firstValueFrom(this.http.post("http://localhost:3000/notas", novaNotaObj, {
       headers: {
@@ -186,9 +158,7 @@ export class AllNotes {
     })) as INotes;
 
 
-    //atualiza os chats da tela
     await this.getNotes();
-    //abre direto o novo chat criado
     await this.onNoteClick(novaNotaResponse);
 
 
@@ -196,13 +166,15 @@ export class AllNotes {
 
   deslogar () {
 
-    // alternativa - local.Storage.remove.Item("meuToken") e ("meuId")
-
     localStorage.clear();
 
     window.location.href = "login";
 
+  }
 
+  cancelar() {
+
+    this.notaSelecionada = null!;
   }
 
   async deletarNota () {

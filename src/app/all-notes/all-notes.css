@@ -327,6 +327,7 @@ border-bottom: 1px solid #E0E4EA;
     font-family: "K2D";
 }
 
+<<<<<<< HEAD
 ::ng-deep body.dark-mode .header  {
     background-color: #232530 !important;
 } 
@@ -373,3 +374,15 @@ border-bottom: 1px solid #E0E4EA;
 ::ng-deep body.dark-mode .divider {
     border-top: #232530 !important;
 } 
+=======
+.row select {
+
+    background-color: bisque;
+    padding: 6px;
+    font-size: 12px;
+    border: 1px solid #E0E4EA;
+    border-radius: 8px;
+
+}
+
+>>>>>>> 1d6cf88d5ced2a5374e187d564486d1e6fb3934c
