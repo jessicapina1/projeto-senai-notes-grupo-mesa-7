@@ -7,7 +7,9 @@
     <div class="login-container">
         <div class="block" [formGroup]="loginForm">
 
-            <div><img src="imgs/logosenainotes.png" alt="logoSenai"></div>
+            <div>
+            <img class="logo" [src]="darkMode == true? 'imgs/logodarkmode.png' : 'imgs/logosenainotes.png'" alt="Logo do SenaiGPT"/>
+            </div>
 
             <h1 class="title"> Welcome to note </h1>
 

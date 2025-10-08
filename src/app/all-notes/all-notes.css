@@ -327,3 +327,49 @@ border-bottom: 1px solid #E0E4EA;
     font-family: "K2D";
 }
 
+::ng-deep body.dark-mode .header  {
+    background-color: #232530 !important;
+} 
+
+::ng-deep body.dark-mode .aside {
+    background-color: #232530 !important;
+} 
+
+::ng-deep body.dark-mode .principal {
+    background-color: #232530 !important;
+    color: #FFFFFF;
+} 
+
+::ng-deep body.dark-mode .container {
+    background-color: #232530 !important;
+} 
+
+::ng-deep body.dark-mode .imput {
+    background-color: #232530 !important;
+} 
+
+::ng-deep body.dark-mode .content {
+    color: #FFFFFF !important;
+} 
+
+::ng-deep body.dark-mode .cancel {
+    background-color: #232530 !important;
+    color: #FFFFFF !important;
+} 
+
+::ng-deep body.dark-mode .label {
+    color: #FFFFFF !important;
+} 
+
+::ng-deep body.dark-mode .value {
+    color: #FFFFFF !important;
+} 
+
+::ng-deep body.dark-mode .inpt {
+    background-color: #0E121B !important;
+    color: #FFFFFF;
+} 
+
+::ng-deep body.dark-mode .divider {
+    border-top: #232530 !important;
+} 

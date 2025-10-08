@@ -164,3 +164,7 @@
 ::ng-deep body.dark-mode .title {
     color: #FFFFFF; 
 } 
+
+::ng-deep body.dark-mode .email {
+    color: #FFFFFF; 
+} 

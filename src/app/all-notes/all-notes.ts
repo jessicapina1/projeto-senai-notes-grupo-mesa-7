@@ -229,4 +229,12 @@ export class AllNotes {
 
           this.cd.detectChanges();
         } 
+
+        ligarDesligarDarkMode () {
+
+      this.darkMode = !this.darkMode; // o inverso do this.darkmode.
+      document.body.classList.toggle("dark-mode", this.darkMode);
+
+      localStorage.setItem("darkMode", this.darkMode.toString());
+    }
       } 
