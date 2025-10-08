@@ -25,9 +25,7 @@ export class LoginScreen {
 
     this.emailErrorMessage = "";
     this.passwordErrorMessage = "";
-    this.loginFail= "";
-  
-    
+    this.loginFail= "";  
   }
 
   validacoes() {
