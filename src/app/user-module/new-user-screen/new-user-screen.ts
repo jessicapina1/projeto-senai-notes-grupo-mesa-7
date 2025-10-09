@@ -46,7 +46,6 @@ export class NewUserScreen {
     this.errorMessage = "";
     this.successMessage = "";
 
-
   }
 
   async onSignUp() {
@@ -89,8 +88,8 @@ export class NewUserScreen {
 
     const userData = {
       email: this.registerForm.value.email,
-      password: this.registerForm.value.password,
-      name: this.registerForm.value.name
+      senha: this.registerForm.value.password,
+      nomeCompleto: this.registerForm.value.name
     };
 
     //   this.http.post("https://senai-gpt-api.azurewebsites.net/users", userData).subscribe(
@@ -106,7 +105,7 @@ export class NewUserScreen {
 
     // );
 
-    let response = await fetch("https://senai-gpt-api.azurewebsites.net/users", {
+    let response = await fetch("http://senainotes-mat.us-east-1.elasticbeanstalk.com/api/usuarios", {
       method: "POST", // Enviar,
       headers: {
         "Content-Type": "application/json"

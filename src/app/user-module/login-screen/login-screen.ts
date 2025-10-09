@@ -20,7 +20,7 @@ export class LoginScreen {
 
     this.loginForm = this.fb.group({
       email: ["", [Validators.required]],
-      password: ["", [Validators.required]] 
+      senha: ["", [Validators.required]] 
     });
 
     this.emailErrorMessage = "";
@@ -68,7 +68,7 @@ export class LoginScreen {
     }
 
 
-    let response = await fetch ("https://senai-gpt-api.azurewebsites.net/login", { 
+    let response = await fetch ("http://senainotes-mat.us-east-1.elasticbeanstalk.com/api/auth", { 
 
       method: "POST",
       headers: {
@@ -77,7 +77,7 @@ export class LoginScreen {
       },
       body: JSON.stringify ({
         email: this.loginForm.value.email,
-        password: this.loginForm.value.password
+        senha: this.loginForm.value.password
       })
 
     }); 
