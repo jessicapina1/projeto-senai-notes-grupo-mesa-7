@@ -142,7 +142,7 @@
             </div>
 
             <div>
-                <textarea class="input-da-nota" name="" id="" [formControl]="descricao"></textarea>
+                <textarea class="input-da-nota" name="" id="" [formControl]="conteudo"></textarea>
             <!-- <input class="input-da-nota" type="text" placeholder="Start Typing your note here" [formControl]="descricao"> -->
             </div>
        
@@ -150,14 +150,15 @@
                 <button class="save" (click) = "salvarNota()">Save Note</button>
                 <button class="cancel" (click)="cancelar()">Cancel</button>
             </div>
+            
           
             </div>
 
             <button class="delete" (click)="deletarNota()"><i class="fa-solid fa-trash-can"></i>Deletar Nota</button>
 
             }
-
+            
         </div>
-    
+                
 
 </main>

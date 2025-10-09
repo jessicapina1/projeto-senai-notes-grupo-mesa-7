@@ -327,7 +327,6 @@ border-bottom: 1px solid #E0E4EA;
     font-family: "K2D";
 }
 
-<<<<<<< HEAD
 ::ng-deep body.dark-mode .header  {
     background-color: #232530 !important;
 } 
@@ -374,10 +373,10 @@ border-bottom: 1px solid #E0E4EA;
 ::ng-deep body.dark-mode .divider {
     border-top: #232530 !important;
 } 
-=======
+
 .row select {
 
-    background-color: bisque;
+    background-color:aliceblue;
     padding: 6px;
     font-size: 12px;
     border: 1px solid #E0E4EA;
@@ -385,4 +384,13 @@ border-bottom: 1px solid #E0E4EA;
 
 }
 
->>>>>>> 1d6cf88d5ced2a5374e187d564486d1e6fb3934c
+.barra {
+
+    border: none;
+    background-color: transparent;
+    width: 377px;
+    height: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+

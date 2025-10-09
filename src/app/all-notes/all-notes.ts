@@ -6,10 +6,14 @@ import { firstValueFrom } from 'rxjs';
 
 interface INotes {
   titulo: string;
-  descricao: string;
-  usuarioID: string;
-  id: number;
+  conteudo: string;
+  usuarioId: string;
+  notasId: number;
   tags: string
+  // tag: {
+  //   tagId: number;
+  //   titulo: string;
+  // }   
   // imagemUrl: 
 
  }
@@ -26,7 +30,7 @@ export class AllNotes {
   notes: INotes[];
   notaSelecionada: INotes;
   tituloNota = new FormControl("");
-  descricao = new FormControl ("");
+  conteudo = new FormControl ("");
   darkMode: boolean = false;
 
   tagSelecionada = '';
@@ -59,7 +63,7 @@ export class AllNotes {
   }
 
   async getNotes() {
-    let response = await firstValueFrom(this.http.get("http://localhost:3000/notas", {
+    let response = await firstValueFrom(this.http.get("http://senainotes-mat.us-east-1.elasticbeanstalk.com/api/notas", {
       headers: {
         "Authorization": "Bearer " + localStorage.getItem("meuToken")
       }
@@ -68,9 +72,9 @@ export class AllNotes {
     })) as INotes[];
 
     if (response) {
-      let usuarioID = localStorage.getItem("meuId");
+      let usuarioId = localStorage.getItem("meuId");
 
-        response = response.filter(notes=>notes.usuarioID == usuarioID);     
+        response = response.filter(notes=>notes.usuarioId == usuarioId);     
       
       this.notes = response;
 
@@ -89,14 +93,14 @@ export class AllNotes {
     this.notaSelecionada = notaClicada;
 
     this.tituloNota.setValue(this.notaSelecionada.titulo);
-    this.descricao.setValue(this.notaSelecionada.descricao);
+    this.conteudo.setValue(this.notaSelecionada.conteudo);
     if ( this.notaSelecionada.tags!= null && this.notaSelecionada.tags.length>0) {
     this.tagSelecionada = this.notaSelecionada.tags[0]}
     else {
       this.tagSelecionada = ""
     }
 
-    let response = await firstValueFrom(this.http.get("http://localhost:3000/notas/" + notaClicada.id, {
+    let response = await firstValueFrom(this.http.get("http://senainotes-mat.us-east-1.elasticbeanstalk.com/api/notas" + notaClicada.notasId, {
       headers: {
 
         "Authorization": "Bearer " + localStorage.getItem("meuToken")
@@ -112,14 +116,14 @@ export class AllNotes {
   async salvarNota () {
 
     let novaNotaUsuario = {
-      id: this.notaSelecionada.id,
-      usuarioID: localStorage.getItem("meuId"),
+      id: this.notaSelecionada.notasId,
+      usuarioId: localStorage.getItem("meuId"),
       titulo: this.tituloNota.value,
-      descricao: this.descricao.value,
+      conteudo: this.conteudo.value,
       tags: [this.tagSelecionada]
     };
 
-    let notaAtualizadaResponse = await firstValueFrom(this.http.put("http://localhost:3000/notas/"+ this.notaSelecionada.id, novaNotaUsuario, {
+    let notaAtualizadaResponse = await firstValueFrom(this.http.put("http://senainotes-mat.us-east-1.elasticbeanstalk.com/{id}"+ this.notaSelecionada.notasId, novaNotaUsuario, {
       headers: {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem("meuToken")
@@ -145,11 +149,11 @@ export class AllNotes {
     const novaNotaObj = {
 
       titulo: nomeNota,
-      descricao: "",
-      usuarioID: localStorage.getItem ("meuId"),
+      conteudo: "",
+      usuarioId: localStorage.getItem ("meuId"),
 
       }
-      let novaNotaResponse = await firstValueFrom(this.http.post("http://localhost:3000/notas", novaNotaObj, {
+      let novaNotaResponse = await firstValueFrom(this.http.post("http://senainotes-mat.us-east-1.elasticbeanstalk.com/api/notas", novaNotaObj, {
       headers: {
         "Content-Type": "application/json",
         "Authorization": "Bearer " + localStorage.getItem("meuToken")
@@ -184,7 +188,7 @@ export class AllNotes {
       return
     }
     try {
-      let deleteResponse = await firstValueFrom (this.http.delete("http://localhost:3000/notas/"+this.notaSelecionada.id,
+      let deleteResponse = await firstValueFrom (this.http.delete("http://senainotes-mat.us-east-1.elasticbeanstalk.com/api/notas/{id}"+this.notaSelecionada.notasId,
         {
           headers: {
             "Content-Type": "application/json",
